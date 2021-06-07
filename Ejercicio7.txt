@@ -1,0 +1,32 @@
+Proceso
+	var contadorceros <- 0
+	var porceros <- 0
+	var contadorpar <- 0
+	var porpar <- 0
+	var contadorimpar <- 0
+	var porimpar <- 0
+	Escribir "Los numeros generados por la ruleta son"
+	Para i = 0, hasta i < 15, i = i + 1
+		var numrandom
+		var par
+		numrandom = Aleatorio(0,36)
+		Escribir numrandom
+		Si numrandom = 0
+			contadorceros = contadorceros +1
+		Sino
+			par <- MOD(numrandom, 2)
+			Si par = 0
+				contadorpar = contadorpar + 1
+			Sino
+				contadorimpar = contadorimpar +1
+			Finsi
+		Finsi
+		
+	FinPara
+	porceros <- (contadorceros/15)*100
+	porpar <- (contadorpar/15)*100
+	porimpar <- (contadorimpar/15)*100
+	Escribir "El porcentade de ceros es de " + porceros + "%"
+	Escribir "El porcentaje de pares es de " + porpar + "%"
+	Escribir "El porcentaje de impares es de " + porimpar + "%"
+FinProceso
